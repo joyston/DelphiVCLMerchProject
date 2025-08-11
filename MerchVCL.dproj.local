@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025 08 07 11:32:55.000.638,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025 08 07 11:33:28.000.184,C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Merch\View.dfm=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2025 08 07 11:33:28.000.184,C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Merch\View.pas=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025 08 07 11:33:46.000.814,C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Merch\MerchVCL.dproj=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2025 08 07 11:55:02.000.313,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Merch\Unit1.pas</Transaction>
+    <Transaction>2025 08 07 11:55:28.000.948,C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Merch\dbModule.dfm=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Merch\Unit1.dfm</Transaction>
+    <Transaction>2025 08 07 11:55:28.000.948,C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Merch\dbModule.pas=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Merch\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
