@@ -25,22 +25,14 @@ object Form1: TForm1
     ExplicitHeight = 433
     object tbView: TTabSheet
       Caption = 'View'
-      object gridView: TStringGrid
+      object DBGrid1: TDBGrid
         Left = 0
         Top = 0
         Width = 763
         Height = 411
         Align = alClient
+        DataSource = DataModule1.dsAllMerch
         TabOrder = 0
-        ExplicitWidth = 761
-        ExplicitHeight = 403
-      end
-      object DBGrid1: TDBGrid
-        Left = 72
-        Top = 168
-        Width = 320
-        Height = 120
-        TabOrder = 1
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -12
@@ -48,9 +40,5 @@ object Form1: TForm1
         TitleFont.Style = []
       end
     end
-  end
-  object dsAllMerch: TDataSource
-    Left = 472
-    Top = 216
   end
 end

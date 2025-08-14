@@ -6,6 +6,7 @@ object DataModule1: TDataModule1
   object conn: TFDConnection
     Params.Strings = (
       'DriverID=MySQL')
+    LoginPrompt = False
     Left = 216
     Top = 312
   end

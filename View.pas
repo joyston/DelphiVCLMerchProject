@@ -6,15 +6,13 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Tabs, Vcl.ComCtrls, Vcl.Grids,
-  Data.DB, Vcl.DBGrids;
+  Data.DB, Vcl.DBGrids, dbModule;
 
 type
   TForm1 = class(TForm)
     PageControl1: TPageControl;
     tbView: TTabSheet;
-    gridView: TStringGrid;
     DBGrid1: TDBGrid;
-    dsAllMerch: TDataSource;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
@@ -28,15 +26,15 @@ var
 
 implementation
 
-uses dbModule;
 
 {$R *.dfm}
+
 
 procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   if Assigned(db) then
   begin
-    db.DisposeOf;
+    db.Free;
   end;
 end;
 
@@ -45,7 +43,7 @@ begin
   if not Assigned(db) then
   begin
     db := TDataModule1.Create(Self);
-    dsAllMerch.DataSet := db.tblAllMerch;
+//    dsAllMerch.DataSet := db.tblAllMerch;
   end;
 end;
 
