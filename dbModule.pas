@@ -13,8 +13,9 @@ uses
 type
   TDataModule1 = class(TDataModule)
     conn: TFDConnection;
-     tblAllMerch: TFDTable;
+    tblAllMerch: TFDTable;
     dsAllMerch: TDataSource;
+    FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
@@ -69,31 +70,33 @@ end;
 procedure TDataModule1.DataModuleCreate(Sender: TObject);
 begin
   ConnectToDB;
-  GetAllMerchWithQuantity;
+  // GetAllMerchWithQuantity;
 end;
 
 procedure TDataModule1.GetAllMerchWithQuantity;
-//var     qry: TFDQuery;
+// var     qry: TFDQuery;
 begin
   try
-//    qry := TFDQuery.Create(Self);
-//    qry.Close;
-//    qry.ExecSQL
-//      ('select m.name, m.type, m.price, m.color, sum(s.quantity) as quantity ' +
-//      'from merch m ' + 'inner join stock s ' + 'on m.id = s.merch_fkid ' +
-//      'group by merch_fkid');
-//    qry.Open;
-//    tblAllMerch.Data := qry.RO
-tblAllMerch.Close;
-//tblAllMerch.ExecSQL('select m.name, m.type, m.price, m.color, sum(s.quantity) as quantity ' +
-//      'from merch m ' + 'inner join stock s ' + 'on m.id = s.merch_fkid ' +
-//      'group by merch_fkid');
-      tblAllMerch.Open('select m.name, m.type, m.price, m.color, sum(s.quantity) as quantity ' +
-      'from merch m ' + 'inner join stock s ' + 'on m.id = s.merch_fkid ' +
-      'group by merch_fkid');
-//    tblAllMerch.DataSource := qry.DataSource;
+    // qry := TFDQuery.Create(Self);
+    // qry.Close;
+    // qry.ExecSQL
+    // ('select m.name, m.type, m.price, m.color, sum(s.quantity) as quantity ' +
+    // 'from merch m ' + 'inner join stock s ' + 'on m.id = s.merch_fkid ' +
+    // 'group by merch_fkid');
+    // qry.Open;
+    // tblAllMerch.Data := qry.RO
+    tblAllMerch.Close;
+    // tblAllMerch.ExecSQL('select m.name, m.type, m.price, m.color, sum(s.quantity) as quantity ' +
+    // 'from merch m ' + 'inner join stock s ' + 'on m.id = s.merch_fkid ' +
+    // 'group by merch_fkid');
+    // tblAllMerch.Op('select m.name, m.type, m.price, m.color, sum(s.quantity) as quantity ' +
+    // 'from merch m ' + 'inner join stock s ' + 'on m.id = s.merch_fkid ' +
+    // 'group by merch_fkid');
+    tblAllMerch.TableName := 'merch';
+    tblAllMerch.Open;
+    // tblAllMerch.DataSource := qry.DataSource;
   finally
-    //qry.DisposeOf;
+    // qry.DisposeOf;
   end;
 end;
 

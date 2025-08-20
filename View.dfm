@@ -38,6 +38,13 @@ object Form1: TForm1
         TitleFont.Height = -12
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'name'
+            Title.Caption = 'Name'
+            Visible = True
+          end>
       end
     end
   end
