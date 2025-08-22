@@ -21,8 +21,6 @@ object Form1: TForm1
     ActivePage = tbView
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 769
-    ExplicitHeight = 433
     object tbView: TTabSheet
       Caption = 'View'
       object DBGrid1: TDBGrid
@@ -43,6 +41,13 @@ object Form1: TForm1
             Expanded = False
             FieldName = 'name'
             Title.Caption = 'Name'
+            Width = 300
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'color'
+            Title.Caption = 'Color'
             Visible = True
           end>
       end
