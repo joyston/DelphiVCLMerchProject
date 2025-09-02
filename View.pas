@@ -12,7 +12,8 @@ type
   TForm1 = class(TForm)
     PageControl1: TPageControl;
     tbView: TTabSheet;
-    DBGrid1: TDBGrid;
+    dbgLive: TDBGrid;
+    dbgDetails: TDBGrid;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private

@@ -21,13 +21,15 @@ object Form1: TForm1
     ActivePage = tbView
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 769
+    ExplicitHeight = 433
     object tbView: TTabSheet
       Caption = 'View'
-      object DBGrid1: TDBGrid
+      object dbgLive: TDBGrid
         Left = 0
-        Top = 0
+        Top = 120
         Width = 763
-        Height = 411
+        Height = 291
         Align = alClient
         DataSource = DataModule1.dsAllMerch
         TabOrder = 0
@@ -48,6 +50,56 @@ object Form1: TForm1
             Expanded = False
             FieldName = 'color'
             Title.Caption = 'Color'
+            Visible = True
+          end>
+      end
+      object dbgDetails: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 763
+        Height = 120
+        Align = alTop
+        DataSource = DataModule1.dsQryMerch
+        TabOrder = 1
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -12
+        TitleFont.Name = 'Segoe UI'
+        TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'name'
+            Title.Caption = 'Name'
+            Width = 300
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'type'
+            Title.Caption = 'Type'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'price'
+            Title.Caption = 'Price'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'color'
+            Title.Caption = 'Color'
+            Width = 80
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'quantity'
+            Title.Caption = 'Quantity'
+            Width = 80
             Visible = True
           end>
       end

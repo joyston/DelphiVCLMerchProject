@@ -8,7 +8,8 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.IniFiles, Vcl.Dialogs,
-  Vcl.Forms, FireDAC.Phys.MySQL, FireDAC.Phys.MySQLDef;
+  Vcl.Forms, FireDAC.Phys.MySQL, FireDAC.Phys.MySQLDef, Data.FMTBcd,
+  Data.SqlExpr;
 
 type
   TDataModule1 = class(TDataModule)
@@ -16,11 +17,14 @@ type
     tblAllMerch: TFDTable;
     dsAllMerch: TDataSource;
     FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
+    dsQryMerch: TDataSource;
+    qryMerch: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
     procedure ConnectToDB;
     procedure GetAllMerchWithQuantity;
+    procedure GetAllMerchForQuery;
   public
     { Public declarations }
 
@@ -70,7 +74,18 @@ end;
 procedure TDataModule1.DataModuleCreate(Sender: TObject);
 begin
   ConnectToDB;
+  GetAllMerchForQuery;
   // GetAllMerchWithQuantity;
+end;
+
+procedure TDataModule1.GetAllMerchForQuery;
+begin
+  qryMerch.Close;
+  qryMerch.SQL.Text :=
+    'select m.name, m.type, m.price, m.color, sum(s.quantity) as quantity ' +
+    'from merch m ' + 'inner join stock s ' + 'on m.id = s.merch_fkid ' +
+    'group by merch_fkid';
+  qryMerch.Open;
 end;
 
 procedure TDataModule1.GetAllMerchWithQuantity;

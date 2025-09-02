@@ -36,4 +36,15 @@ object DataModule1: TDataModule1
     Left = 176
     Top = 433
   end
+  object dsQryMerch: TDataSource
+    AutoEdit = False
+    DataSet = qryMerch
+    Left = 568
+    Top = 472
+  end
+  object qryMerch: TFDQuery
+    Connection = conn
+    Left = 448
+    Top = 424
+  end
 end
