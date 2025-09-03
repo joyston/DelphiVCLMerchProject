@@ -5,7 +5,8 @@ uses
   View in 'View.pas' {Form1},
   dbModule in 'dbModule.pas' {DataModule1: TDataModule},
   Vcl.Themes,
-  Vcl.Styles;
+  Vcl.Styles,
+  frmAddMerch in 'Frames\frmAddMerch.pas' {Frame1: TFrame};
 
 {$R *.res}
 

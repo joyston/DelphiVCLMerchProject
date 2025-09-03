@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Tabs, Vcl.ComCtrls, Vcl.Grids,
-  Data.DB, Vcl.DBGrids, dbModule;
+  Data.DB, Vcl.DBGrids, dbModule, frmAddMerch;
 
 type
   TForm1 = class(TForm)
@@ -14,6 +14,8 @@ type
     tbView: TTabSheet;
     dbgLive: TDBGrid;
     dbgDetails: TDBGrid;
+    tbAdd: TTabSheet;
+    frameMerch: TFrame1;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private

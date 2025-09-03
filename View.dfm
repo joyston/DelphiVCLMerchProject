@@ -18,11 +18,9 @@ object Form1: TForm1
     Top = 0
     Width = 771
     Height = 441
-    ActivePage = tbView
+    ActivePage = tbAdd
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 769
-    ExplicitHeight = 433
     object tbView: TTabSheet
       Caption = 'View'
       object dbgLive: TDBGrid
@@ -102,6 +100,21 @@ object Form1: TForm1
             Width = 80
             Visible = True
           end>
+      end
+    end
+    object tbAdd: TTabSheet
+      Caption = 'Add'
+      ImageIndex = 1
+      inline frameMerch: TFrame1
+        Left = 0
+        Top = 0
+        Width = 763
+        Height = 411
+        Align = alClient
+        TabOrder = 0
+        ExplicitLeft = 48
+        ExplicitTop = 11
+        ExplicitWidth = 481
       end
     end
   end
