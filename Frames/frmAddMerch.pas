@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Samples.Spin;
 
 type
   TFrame1 = class(TFrame)
@@ -16,6 +17,8 @@ type
     edtColor: TEdit;
     rgType: TRadioGroup;
     btnSave: TButton;
+    SpinEdit1: TSpinEdit;
+    Label4: TLabel;
   private
     { Private declarations }
   public

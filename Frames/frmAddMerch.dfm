@@ -25,6 +25,13 @@ object Frame1: TFrame1
     Height = 15
     Caption = 'Color'
   end
+  object Label4: TLabel
+    Left = 56
+    Top = 293
+    Width = 46
+    Height = 15
+    Caption = 'Quantity'
+  end
   object edtName: TEdit
     Left = 152
     Top = 45
@@ -62,10 +69,20 @@ object Frame1: TFrame1
   end
   object btnSave: TButton
     Left = 128
-    Top = 320
+    Top = 336
     Width = 75
     Height = 25
     Caption = 'Save'
     TabOrder = 4
+  end
+  object SpinEdit1: TSpinEdit
+    Left = 152
+    Top = 290
+    Width = 121
+    Height = 24
+    MaxValue = 0
+    MinValue = 0
+    TabOrder = 5
+    Value = 0
   end
 end

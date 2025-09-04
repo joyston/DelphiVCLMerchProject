@@ -21,6 +21,8 @@ object Form1: TForm1
     ActivePage = tbAdd
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 769
+    ExplicitHeight = 433
     object tbView: TTabSheet
       Caption = 'View'
       object dbgLive: TDBGrid
@@ -112,9 +114,8 @@ object Form1: TForm1
         Height = 411
         Align = alClient
         TabOrder = 0
-        ExplicitLeft = 48
-        ExplicitTop = 11
-        ExplicitWidth = 481
+        ExplicitWidth = 761
+        ExplicitHeight = 403
       end
     end
   end
