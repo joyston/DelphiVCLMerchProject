@@ -116,6 +116,9 @@ object Form1: TForm1
         TabOrder = 0
         ExplicitWidth = 761
         ExplicitHeight = 403
+        inherited btnSave: TButton
+          OnClick = frameMerchbtnSaveClick
+        end
       end
     end
   end

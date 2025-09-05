@@ -75,12 +75,12 @@ object Frame1: TFrame1
     Caption = 'Save'
     TabOrder = 4
   end
-  object SpinEdit1: TSpinEdit
+  object edtQuantity: TSpinEdit
     Left = 152
     Top = 290
     Width = 121
     Height = 24
-    MaxValue = 0
+    MaxValue = 255
     MinValue = 0
     TabOrder = 5
     Value = 0

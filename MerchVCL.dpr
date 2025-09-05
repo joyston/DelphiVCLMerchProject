@@ -6,7 +6,8 @@ uses
   dbModule in 'dbModule.pas' {DataModule1: TDataModule},
   Vcl.Themes,
   Vcl.Styles,
-  frmAddMerch in 'Frames\frmAddMerch.pas' {Frame1: TFrame};
+  frmAddMerch in 'Frames\frmAddMerch.pas' {Frame1: TFrame},
+  MiddleLayer in 'MiddleLayer.pas';
 
 {$R *.res}
 
