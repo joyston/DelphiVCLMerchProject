@@ -25,13 +25,6 @@ object Frame1: TFrame1
     Height = 15
     Caption = 'Color'
   end
-  object Label4: TLabel
-    Left = 56
-    Top = 293
-    Width = 46
-    Height = 15
-    Caption = 'Quantity'
-  end
   object edtName: TEdit
     Left = 152
     Top = 45
@@ -74,15 +67,5 @@ object Frame1: TFrame1
     Height = 25
     Caption = 'Save'
     TabOrder = 4
-  end
-  object edtQuantity: TSpinEdit
-    Left = 152
-    Top = 290
-    Width = 121
-    Height = 24
-    MaxValue = 255
-    MinValue = 0
-    TabOrder = 5
-    Value = 0
   end
 end

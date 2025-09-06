@@ -66,6 +66,21 @@ begin
         Abort;
       end;
 
+      if frameMerch.rgType.ItemIndex <> -1 then
+      begin
+        if frameMerch.rgType.ItemIndex = 0 then
+         newMerch.MerchType := 'Rubber'
+        else if frameMerch.rgType.ItemIndex = 0 then
+         newMerch.MerchType := frameMerch.rgType.Items[1]
+        else
+          newMerch.MerchType := frameMerch.rgType.Items[2];
+      end
+      else
+      begin
+        raise Exception.Create('Name not found');
+        Abort;
+      end;
+
       if frameMerch.edtPrice.Text <> '' then
       begin
         newMerch.Price := StrToCurr(frameMerch.edtPrice.Text)
@@ -86,15 +101,10 @@ begin
         Abort;
       end;
 
-      if frameMerch.edtQuantity.Text <> '' then
-      begin
-        newMerch.Quantity := StrToInt(frameMerch.edtQuantity.Text);
-      end
+      if DB.InsertMerch(newMerch) then
+        ShowMessage('Merch Inserted Successfully')
       else
-      begin
-        raise Exception.Create('Quantity not found');
-        Abort;
-      end;
+        ShowMessage('Merch Insert was Not Successful');
     except
       on E: Exception do
         ShowMessage(E.Message)

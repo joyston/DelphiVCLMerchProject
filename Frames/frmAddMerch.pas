@@ -17,8 +17,6 @@ type
     edtColor: TEdit;
     rgType: TRadioGroup;
     btnSave: TButton;
-    edtQuantity: TSpinEdit;
-    Label4: TLabel;
   private
     { Private declarations }
   public

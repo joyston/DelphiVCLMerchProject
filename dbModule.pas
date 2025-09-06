@@ -9,7 +9,7 @@ uses
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.IniFiles, Vcl.Dialogs,
   Vcl.Forms, FireDAC.Phys.MySQL, FireDAC.Phys.MySQLDef, Data.FMTBcd,
-  Data.SqlExpr;
+  Data.SqlExpr, MiddleLayer;
 
 type
   TDataModule1 = class(TDataModule)
@@ -27,7 +27,7 @@ type
     procedure GetAllMerchForQuery;
   public
     { Public declarations }
-
+    function InsertMerch(Merch: TMerch): Boolean;
   end;
 
 var
@@ -112,6 +112,28 @@ begin
     // tblAllMerch.DataSource := qry.DataSource;
   finally
     // qry.DisposeOf;
+  end;
+end;
+
+function TDataModule1.InsertMerch(Merch: TMerch): Boolean;
+var
+  insertMerchId: Integer;
+begin
+  conn.StartTransaction;
+  try
+    conn.ExecSQL('Insert into merch(name, type, price, color) '
+      + 'values (:Name,:Type, :Price,:Color)', [Merch.Name, Merch.MerchType,
+      Merch.Price, Merch.Color]);
+
+    {conn.ExecSQL('Insert into stock(merch_fkid, size, quantity) '
+      + 'values (:MerchID,:Size, :Quantity)', [Merch.Name, Merch.MerchType,
+      Merch.Price, Merch.Color]);    }
+
+    conn.Commit;
+    result := true;
+  except
+    conn.Rollback;
+    result := false;
   end;
 end;
 
