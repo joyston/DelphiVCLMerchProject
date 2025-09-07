@@ -44,7 +44,7 @@ object DataModule1: TDataModule1
   end
   object qryMerch: TFDQuery
     Connection = conn
-    Left = 448
-    Top = 424
+    Left = 416
+    Top = 472
   end
 end

@@ -18,7 +18,7 @@ object Form1: TForm1
     Top = 0
     Width = 771
     Height = 441
-    ActivePage = tbAdd
+    ActivePage = tbView
     Align = alClient
     TabOrder = 0
     ExplicitWidth = 769
