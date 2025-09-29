@@ -1,16 +1,10 @@
-﻿[dsAllMerch]
-Coordinates=98,1,78,36
-
-[tblAllMerch]
-Coordinates=88,10,79,58
-
-[FDPhysMySQLDriverLink1]
+﻿[FDPhysMySQLDriverLink1]
 Coordinates=195,1,168,36
 
 [conn]
 Coordinates=79,77,42,36
 
 []
-Coordinates=10,10,68,58
+Coordinates=98,1,78,36
 Visible=True
 

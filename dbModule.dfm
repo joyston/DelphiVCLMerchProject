@@ -15,20 +15,6 @@ object DataModule1: TDataModule1
     Left = 216
     Top = 313
   end
-  object tblAllMerch: TFDTable
-    Active = True
-    IndexFieldNames = 'id'
-    Connection = conn
-    ResourceOptions.AssignedValues = [rvEscapeExpand]
-    TableName = 'merch'
-    Left = 408
-    Top = 264
-  end
-  object dsAllMerch: TDataSource
-    DataSet = tblAllMerch
-    Left = 560
-    Top = 264
-  end
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
     VendorLib = 
       'C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\MerchVCL\Win' +
@@ -38,13 +24,41 @@ object DataModule1: TDataModule1
   end
   object dsQryMerch: TDataSource
     AutoEdit = False
-    DataSet = qryMerch
-    Left = 568
-    Top = 472
+    DataSet = tblMerch
+    Left = 528
+    Top = 216
   end
   object qryMerch: TFDQuery
+    Active = True
     Connection = conn
-    Left = 416
-    Top = 472
+    SQL.Strings = (
+      'Select * from merch')
+    Left = 392
+    Top = 304
+  end
+  object tblStock: TFDTable
+    Active = True
+    IndexFieldNames = 'merch_fkid'
+    MasterSource = dsQryMerch
+    MasterFields = 'id'
+    Connection = conn
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'merchandise.stock'
+    Left = 392
+    Top = 425
+  end
+  object dsStock: TDataSource
+    DataSet = tblStock
+    Left = 544
+    Top = 432
+  end
+  object tblMerch: TFDTable
+    Active = True
+    IndexFieldNames = 'id'
+    Connection = conn
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'merchandise.merch'
+    Left = 392
+    Top = 216
   end
 end

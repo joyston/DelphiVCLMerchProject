@@ -31,7 +31,7 @@ object Form1: TForm1
         Width = 763
         Height = 291
         Align = alClient
-        DataSource = DataModule1.dsAllMerch
+        DataSource = DataModule1.dsStock
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
@@ -41,15 +41,13 @@ object Form1: TForm1
         Columns = <
           item
             Expanded = False
-            FieldName = 'name'
-            Title.Caption = 'Name'
-            Width = 300
+            FieldName = 'size'
+            Width = 59
             Visible = True
           end
           item
             Expanded = False
-            FieldName = 'color'
-            Title.Caption = 'Color'
+            FieldName = 'quantity'
             Visible = True
           end>
       end
@@ -98,8 +96,8 @@ object Form1: TForm1
           item
             Expanded = False
             FieldName = 'quantity'
-            Title.Caption = 'Quantity'
-            Width = 80
+            Title.Caption = 'Total Quantity'
+            Width = 90
             Visible = True
           end>
       end
@@ -114,8 +112,8 @@ object Form1: TForm1
         Height = 411
         Align = alClient
         TabOrder = 0
-        ExplicitWidth = 761
-        ExplicitHeight = 403
+        ExplicitWidth = 763
+        ExplicitHeight = 411
         inherited btnSave: TButton
           OnClick = frameMerchbtnSaveClick
         end

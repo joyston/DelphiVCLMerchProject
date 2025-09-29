@@ -14,16 +14,16 @@ uses
 type
   TDataModule1 = class(TDataModule)
     conn: TFDConnection;
-    tblAllMerch: TFDTable;
-    dsAllMerch: TDataSource;
     FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink;
     dsQryMerch: TDataSource;
     qryMerch: TFDQuery;
+    tblStock: TFDTable;
+    dsStock: TDataSource;
+    tblMerch: TFDTable;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
     procedure ConnectToDB;
-    procedure GetAllMerchWithQuantity;
     procedure GetAllMerchForQuery;
   public
     { Public declarations }
@@ -74,7 +74,7 @@ end;
 procedure TDataModule1.DataModuleCreate(Sender: TObject);
 begin
   ConnectToDB;
-  GetAllMerchForQuery;
+  //GetAllMerchForQuery;
   // GetAllMerchWithQuantity;
 end;
 
@@ -82,37 +82,10 @@ procedure TDataModule1.GetAllMerchForQuery;
 begin
   qryMerch.Close;
   qryMerch.SQL.Text :=
-    'select m.name, m.type, m.price, m.color, sum(s.quantity) as quantity ' +
+    'select m.id as MerchId, m.name, m.type, m.price, m.color, sum(s.quantity) as quantity ' +
     'from merch m ' + 'inner join stock s ' + 'on m.id = s.merch_fkid ' +
     'group by merch_fkid';
   qryMerch.Open;
-end;
-
-procedure TDataModule1.GetAllMerchWithQuantity;
-// var     qry: TFDQuery;
-begin
-  try
-    // qry := TFDQuery.Create(Self);
-    // qry.Close;
-    // qry.ExecSQL
-    // ('select m.name, m.type, m.price, m.color, sum(s.quantity) as quantity ' +
-    // 'from merch m ' + 'inner join stock s ' + 'on m.id = s.merch_fkid ' +
-    // 'group by merch_fkid');
-    // qry.Open;
-    // tblAllMerch.Data := qry.RO
-    tblAllMerch.Close;
-    // tblAllMerch.ExecSQL('select m.name, m.type, m.price, m.color, sum(s.quantity) as quantity ' +
-    // 'from merch m ' + 'inner join stock s ' + 'on m.id = s.merch_fkid ' +
-    // 'group by merch_fkid');
-    // tblAllMerch.Op('select m.name, m.type, m.price, m.color, sum(s.quantity) as quantity ' +
-    // 'from merch m ' + 'inner join stock s ' + 'on m.id = s.merch_fkid ' +
-    // 'group by merch_fkid');
-    tblAllMerch.TableName := 'merch';
-    tblAllMerch.Open;
-    // tblAllMerch.DataSource := qry.DataSource;
-  finally
-    // qry.DisposeOf;
-  end;
 end;
 
 function TDataModule1.InsertMerch(Merch: TMerch): Boolean;
@@ -121,13 +94,13 @@ var
 begin
   conn.StartTransaction;
   try
-    conn.ExecSQL('Insert into merch(name, type, price, color) '
-      + 'values (:Name,:Type, :Price,:Color)', [Merch.Name, Merch.MerchType,
+    conn.ExecSQL('Insert into merch(name, type, price, color) ' +
+      'values (:Name,:Type, :Price,:Color)', [Merch.Name, Merch.MerchType,
       Merch.Price, Merch.Color]);
 
-    {conn.ExecSQL('Insert into stock(merch_fkid, size, quantity) '
+    { conn.ExecSQL('Insert into stock(merch_fkid, size, quantity) '
       + 'values (:MerchID,:Size, :Quantity)', [Merch.Name, Merch.MerchType,
-      Merch.Price, Merch.Color]);    }
+      Merch.Price, Merch.Color]); }
 
     conn.Commit;
     result := true;

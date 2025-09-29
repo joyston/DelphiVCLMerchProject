@@ -45,6 +45,10 @@ begin
   if not Assigned(DB) then
   begin
     DB := TDataModule1.Create(Self);
+    DB.conn.Connected := True;
+    DB.tblMerch.Open;
+    DB.tblStock.Open;
+
     // dsAllMerch.DataSet := db.tblAllMerch;
   end;
 end;
