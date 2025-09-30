@@ -6,16 +6,22 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Tabs, Vcl.ComCtrls, Vcl.Grids,
-  Data.DB, Vcl.DBGrids, dbModule, frmAddMerch, MiddleLayer;
+  Data.DB, Vcl.DBGrids, dbModule, frmAddMerch, MiddleLayer, Vcl.StdCtrls,
+  Vcl.Samples.Spin, Vcl.ExtCtrls;
 
 type
   TForm1 = class(TForm)
     PageControl1: TPageControl;
     tbView: TTabSheet;
-    dbgLive: TDBGrid;
+    dbgStock: TDBGrid;
     dbgDetails: TDBGrid;
     tbAdd: TTabSheet;
     frameMerch: TFrame1;
+    pnlStock: TPanel;
+    Panel1: TPanel;
+    Label1: TLabel;
+    SpinEdit1: TSpinEdit;
+    btnUpdateStock: TButton;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure frameMerchbtnSaveClick(Sender: TObject);

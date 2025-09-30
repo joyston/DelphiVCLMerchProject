@@ -25,32 +25,6 @@ object Form1: TForm1
     ExplicitHeight = 433
     object tbView: TTabSheet
       Caption = 'View'
-      object dbgLive: TDBGrid
-        Left = 0
-        Top = 120
-        Width = 763
-        Height = 291
-        Align = alClient
-        DataSource = DataModule1.dsStock
-        TabOrder = 0
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -12
-        TitleFont.Name = 'Segoe UI'
-        TitleFont.Style = []
-        Columns = <
-          item
-            Expanded = False
-            FieldName = 'size'
-            Width = 59
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'quantity'
-            Visible = True
-          end>
-      end
       object dbgDetails: TDBGrid
         Left = 0
         Top = 0
@@ -58,7 +32,7 @@ object Form1: TForm1
         Height = 120
         Align = alTop
         DataSource = DataModule1.dsQryMerch
-        TabOrder = 1
+        TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -12
@@ -100,6 +74,80 @@ object Form1: TForm1
             Width = 90
             Visible = True
           end>
+      end
+      object pnlStock: TPanel
+        Left = 0
+        Top = 120
+        Width = 763
+        Height = 291
+        Align = alClient
+        TabOrder = 1
+        ExplicitLeft = 152
+        ExplicitTop = 144
+        ExplicitWidth = 385
+        ExplicitHeight = 241
+        object dbgStock: TDBGrid
+          Left = 1
+          Top = 1
+          Width = 232
+          Height = 289
+          Align = alLeft
+          DataSource = DataModule1.dsStock
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -12
+          TitleFont.Name = 'Segoe UI'
+          TitleFont.Style = []
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'size'
+              Width = 70
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'quantity'
+              Width = 100
+              Visible = True
+            end>
+        end
+        object Panel1: TPanel
+          Left = 233
+          Top = 1
+          Width = 529
+          Height = 289
+          Align = alClient
+          TabOrder = 1
+          ExplicitLeft = 576
+          ExplicitWidth = 186
+          object Label1: TLabel
+            Left = 96
+            Top = 83
+            Width = 36
+            Height = 15
+            Caption = 'lblSize:'
+          end
+          object SpinEdit1: TSpinEdit
+            Left = 168
+            Top = 80
+            Width = 121
+            Height = 24
+            MaxValue = 0
+            MinValue = 0
+            TabOrder = 0
+            Value = 0
+          end
+          object btnUpdateStock: TButton
+            Left = 136
+            Top = 144
+            Width = 75
+            Height = 25
+            Caption = 'Update'
+            TabOrder = 1
+          end
+        end
       end
     end
     object tbAdd: TTabSheet
