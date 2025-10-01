@@ -82,10 +82,8 @@ object Form1: TForm1
         Height = 291
         Align = alClient
         TabOrder = 1
-        ExplicitLeft = 152
-        ExplicitTop = 144
-        ExplicitWidth = 385
-        ExplicitHeight = 241
+        ExplicitWidth = 761
+        ExplicitHeight = 283
         object dbgStock: TDBGrid
           Left = 1
           Top = 1
@@ -120,18 +118,31 @@ object Form1: TForm1
           Height = 289
           Align = alClient
           TabOrder = 1
-          ExplicitLeft = 576
-          ExplicitWidth = 186
+          ExplicitLeft = 239
+          ExplicitTop = 6
           object Label1: TLabel
-            Left = 96
+            Left = 42
             Top = 83
-            Width = 36
+            Width = 23
             Height = 15
-            Caption = 'lblSize:'
+            Caption = 'Size:'
+          end
+          object Label2: TLabel
+            Left = 16
+            Top = 139
+            Width = 49
+            Height = 15
+            Caption = 'Quantity:'
+          end
+          object Image1: TImage
+            Left = 296
+            Top = 41
+            Width = 209
+            Height = 224
           end
           object SpinEdit1: TSpinEdit
-            Left = 168
-            Top = 80
+            Left = 96
+            Top = 136
             Width = 121
             Height = 24
             MaxValue = 0
@@ -140,12 +151,25 @@ object Form1: TForm1
             Value = 0
           end
           object btnUpdateStock: TButton
-            Left = 136
-            Top = 144
+            Left = 64
+            Top = 224
             Width = 75
             Height = 25
-            Caption = 'Update'
+            Caption = 'Save'
             TabOrder = 1
+          end
+          object cbxSize: TComboBox
+            Left = 96
+            Top = 80
+            Width = 71
+            Height = 23
+            TabOrder = 2
+            Text = 'cbxSize'
+            Items.Strings = (
+              'S'
+              'M'
+              'L'
+              'XL')
           end
         end
       end

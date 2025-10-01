@@ -22,6 +22,9 @@ type
     Label1: TLabel;
     SpinEdit1: TSpinEdit;
     btnUpdateStock: TButton;
+    Label2: TLabel;
+    cbxSize: TComboBox;
+    Image1: TImage;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure frameMerchbtnSaveClick(Sender: TObject);
